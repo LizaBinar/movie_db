@@ -13,7 +13,14 @@ function Loading() {
 
 export default function MovieImg({ posterPath }) {
   if (posterPath !== null) {
-    return <Image width={187} src={getPosterLink(posterPath)} placeholder={<Loading />} />;
+    return (
+      <Image
+        width={187}
+        src={getPosterLink(posterPath)}
+        placeholder={<Loading />}
+        fallback="https://sun9-9.userapi.com/impg/ELAv43jRu13qdfg4uPuhlVpSqyy3zSz4Eu3x_A/VzZUj38gQ8w.jpg?size=252x351&quality=96&sign=203ff5b5ded71bbdb9779cc4a6da20ec&type=album"
+      />
+    );
   }
   return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={false} placeholder={<Loading />} />;
 }
